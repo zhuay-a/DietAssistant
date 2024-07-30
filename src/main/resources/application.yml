@@ -17,7 +17,7 @@ spring:
 
 dietassistant:
   jwt:
-    ttl: 7200000
+    ttl: 7200000000
     secretkey: zhuay
     userid: userId
     usertoken: token

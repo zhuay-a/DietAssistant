@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dietAssistant.mapper.NutrientMapper">
+    <insert id="addNutrient">
+        insert into nutrients(name, description, created_at, updated_at) value(#{name}, #{description}, #{creat_at}, #{update_at})
+    </insert>
+
+    <update id="updateNutrient">
+        update nutrients
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+        </set>
+        where nutrient_id = #{nutrient_id}
+    </update>
+</mapper>

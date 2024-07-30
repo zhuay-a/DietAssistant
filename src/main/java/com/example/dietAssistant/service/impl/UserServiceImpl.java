@@ -48,4 +48,9 @@ public class UserServiceImpl implements UserService {
         userVO.setJwt(JWTUtil.creatJWT(map, jwtProperties.getTtl(), jwtProperties.getSecretkey()));
         return userVO;
     }
+
+    @Override
+    public void modify(UserDTO userDTO) {
+        userMapper.update(userDTO);
+    }
 }

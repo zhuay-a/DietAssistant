@@ -7,4 +7,6 @@ public interface UserService {
     Boolean addUser(UserDTO userDTO);
 
     UserVO login(UserDTO userDTO);
+
+    void modify(UserDTO userDTO);
 }

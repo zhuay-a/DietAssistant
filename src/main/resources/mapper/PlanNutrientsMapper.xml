@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dietAssistant.mapper.PlanNutrientsMapper">
+    <insert id="add">
+        insert into plannutrients(plan_id, nutrient_id, target_amount, unit, nutrient_name)
+        VALUES (#{plan_id}, #{nutrient_id}, #{target_amount}, #{unit}, #{nutrient_name})
+    </insert>
+    <update id="modify">
+        update plannutrients
+        <set>
+            <if test="target_amount != null">
+                target_amount = #{target_amount},
+            </if>
+            <if test="unit != null and unit != ''">
+                unit = #{unit},
+            </if>
+            <if test="nutrient_name != null and nutrient_name != ''">
+                nutrient_name = #{nutrient_name}
+            </if>
+        </set>
+        where plan_id = #{plan_id} and nutrient_id = #{nutrient_id}
+    </update>
+</mapper>

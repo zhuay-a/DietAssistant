@@ -15,4 +15,6 @@ public interface UserMapper {
 
     @Select("select * from users where username = #{username}")
     User getByUserName(String username);
+
+    void update(UserDTO userDTO);
 }

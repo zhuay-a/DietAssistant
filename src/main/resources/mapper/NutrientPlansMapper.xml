@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dietAssistant.mapper.NutrientPlansMapper">
+   <insert id="addPlan">
+       insert into nutrientplans(name, description, created_user, updated_time, created_time)
+           values(#{name}, #{description}, #{created_user}, #{updated_time}, #{created_time})
+   </insert>
+</mapper>

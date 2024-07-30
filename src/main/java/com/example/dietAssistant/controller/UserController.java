@@ -44,4 +44,12 @@ public class UserController {
     public String test() {
         return "1111";
     }
+
+    //修改用户信息
+    @PutMapping("/modify")
+    @ResponseBody
+    public Result<String> modifyUser(@RequestBody UserDTO userDTO) {
+        userService.modify(userDTO);
+        return Result.success("更新成功");
+    }
 }

@@ -15,6 +15,13 @@ public class Result<T> {
         return result;
     }
 
+    public static <T> Result<T> success(T data) {
+        Result<T> result = new Result<>();
+        result.data = data;
+        result.code = 200;
+        return result;
+    }
+
     public Result<T> data(T data) {
         this.data = data;
         return this;
