@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dietAssistant.mapper.UserIntakeMapper">
+    <insert id="insertNutrient">
+        insert into usernutrientintake(user_id, nutrient_id, intake_date, nutrient_name, amount, unit)
+        VALUES (#{userId}, #{nutrientId}, #{intakeDate}, #{nutrientName}, #{amount}, #{unit})
+    </insert>
+
+    <update id="updateNutrient">
+        update usernutrientintake set amount = #{amount} where user_id = #{userId} and nutrient_id = #{nutrientId} and intake_date = #{intakeDate}
+    </update>
+
+    <insert id="insertFood">
+        insert into userfoodintake(user_id, food_id, intake_date, food_name, amount, unit)
+        VALUES (#{userId}, #{foodId}, #{intakeDate}, #{foodName}, #{amount}, #{unit})
+    </insert>
+
+    <update id="updateFood">
+        update userfoodintake set amount = #{amount} where user_id = #{userId} and food_id = #{foodId} and intake_date = #{intakeDate}
+    </update>
+</mapper>

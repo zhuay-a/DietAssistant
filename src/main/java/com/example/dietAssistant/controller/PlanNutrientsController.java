@@ -34,7 +34,7 @@ public class PlanNutrientsController {
 
     @GetMapping("/get")
     @ResponseBody
-    public Result<List<Object>> getNutrientList(@RequestBody PlanNutrients planNutrients) {
+    public Result<List<NutrientVO>> getNutrientList(@RequestBody PlanNutrients planNutrients) {
         List<NutrientVO> list = planNutrientsService.getById(planNutrients);
         Result result = Result.success("查询计划营养成功").data(list);
         return result;
