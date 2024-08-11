@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dietAssistant.mapper.PostCommentMapper">
+    <insert id="addComment">
+        insert into postcomments(post_id, user_id, comment_content, like_count, comment_time, reply_to)
+        VALUES (#{postId}, #{userId}, #{commentContent}, #{likeCount}, #{commentTime}, #{replyTo})
+    </insert>
+</mapper>
