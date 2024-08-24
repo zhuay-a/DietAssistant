@@ -15,4 +15,6 @@ public class Nutrient {
     private LocalDateTime creat_at;
 
     private LocalDateTime update_at;
+
+    private LocalDateTime DeleteTime;
 }

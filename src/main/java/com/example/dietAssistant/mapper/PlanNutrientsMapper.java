@@ -16,4 +16,7 @@ public interface PlanNutrientsMapper {
 
     @Select("select nutrient_name, target_amount, unit from plannutrients where plan_id = #{plan_id}")
     List<NutrientVO> getById(PlanNutrients planNutrients);
+
+    @Select("select * from plannutrients where plan_id = #{planId} and nutrient_id = #{nutrientId}")
+    PlanNutrients getByPlanIdNutrientId(PlanNutrients planNutrients);
 }
