@@ -7,9 +7,9 @@ import com.example.dietAssistant.dto.UserIntake;
 import java.util.List;
 
 public interface UserIntakeService {
-    void intakeNutrient(UserIntake userIntake);
+    Boolean intakeNutrient(UserIntake userIntake);
 
-    void intakeFood(UserIntake userIntake);
+    Boolean intakeFood(UserIntake userIntake);
 
     List<IntakeFood> getIntakeFood(UserIntake userIntake);
 

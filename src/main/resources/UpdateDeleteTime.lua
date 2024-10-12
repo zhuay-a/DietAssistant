@@ -5,7 +5,13 @@
 ---
 local dataKey = ARGV[1]
 local deleteTime = ARGV[2]
-local nowTime = redis.call("get", dataKey)
-if deleteTime > nowTime then
-    redis.call("set", dataKey, deleteTime)
+local nowDeleteTime = redis.call("get", dataKey)
+if nowDeleteTime == "" or deleteTime > nowDeleteTime then
+    local setResult = redis.call("set", dataKey, deleteTime)
+    if setResult == "OK" then
+        return 1  -- SET 命令执行成功
+    else
+        return 0  -- SET 命令执行失败
+    end
 end
+return 1  -- SET 命令执行成功

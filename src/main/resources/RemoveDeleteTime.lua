@@ -7,5 +7,5 @@ local dataKey = ARGV[1]
 local deleteTime = ARGV[2]
 local nowTime = redis.call("get", dataKey)
 if deleteTime == nowTime then
-    redis.call('DEL', dataKey)
+    redis.call('set', dataKey, "")
 end
